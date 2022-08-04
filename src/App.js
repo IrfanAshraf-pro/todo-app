@@ -24,7 +24,8 @@ function App() {
     }
   ])
   const handleAdd = (e) => {
-    const id = todo.length + 1
+    let { id } = todo.slice(-1).pop()
+    id=id+1
     const newTodo = {
       id,
       name: e,
