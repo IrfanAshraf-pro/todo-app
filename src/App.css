@@ -1,11 +1,12 @@
 :root{
   --primary:white;
   --secondary:black;
-  --logo:#1C658C;
+  --logo:#48435C;
   --headings:#316B83;
-  --cardColor:#398AB9;
-  --lightColor:#47B5FF;
-  --mainBg:#205375;
+  --cardColor:#4A646C;
+  --lightColor:#93A29B;
+  --mainBg:#5A5766;
+  --completed:#36454F;
 }
 p{
   font-family:'Poppins', sans-serif;
@@ -75,7 +76,7 @@ h1,h2{
 
 /* TODO */
 .completed{
-  background-color:#242F9B;
+  background-color:var(--completed);
 }
 .unComplete{
   background-color:var(--cardColor);
@@ -98,7 +99,9 @@ h1,h2{
   font-size:1.5rem;
   font-weight:500px;
   color:var(--primary);
-
+}
+.completed.todo-name{
+  text-decoration-line: line-through;
 }
 .todo-status-container,
 .todo-body{
@@ -137,6 +140,19 @@ h1,h2{
   align-items:center;
   justify-content:space-around;
 }
+@media (max-width:500px){
+  .formContainer{
+    flex-direction:column;
+  }
+  .form-input{
+    margin-bottom:.8em;
+    width:auto;
+  }
+  .form-button{
+    width:90%;
+  }
+}
+
 .form-input{
   padding:.7em 1.2em;
   border-radius:.5em;
@@ -150,8 +166,12 @@ h1,h2{
   border-radius:.8em;
   border:none;
   font-size:1em;
-  font-weight:500px;
+  font-weight:500;
   color:var(--mainBg)
+}
+.form-button:hover{
+  background-color:var(--completed);
+  color:white;
 }
 /* 
 @media (prefers-reduced-motion: no-preference) {
